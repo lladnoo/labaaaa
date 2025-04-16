@@ -3,7 +3,7 @@ FROM python:3.11
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-WORKDIR /app
-COPY src .
+WORKDIR app/
+COPY src /app/src/
 
-ENTRYPOINT [ "python", "main.py" ]
+ENTRYPOINT [ "python", "-m", "src.main" ]  
